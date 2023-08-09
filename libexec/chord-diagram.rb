@@ -64,15 +64,27 @@ instruments = ["guitar", "guitalele", "ukulele", "baritone", "mandolin"]
 
 # Template for the usage for the program.
 usage = <<END_USAGE
-#{PROGRAM_NAME} [instrument] [chord]
+#{PROGRAM_NAME} [option] [instrument] [chord] ...
 
 Instruments:
 
 #{instruments
     .map.with_index do |n, i|
-      "- #{n}" + (i + 1 < instruments.length ? "\n" : "")
+      "* #{n}" + (i + 1 < instruments.length ? "\n" : "")
     end
     .join("")}
+
+`baritone` here means baritone ukuleles.
+
+Chord Examples:
+
+* C
+* Am
+* G7
+* Dsus2
+
+Each chord belongs to one command-line paramenter,
+  separated by a space
 END_USAGE
 
 generate_code = false
