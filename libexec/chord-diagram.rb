@@ -60,7 +60,7 @@ if not command?("lilypond") then
 end
 
 # Set the valid instruments in the program.
-instruments = ["guitar", "guitalele", "ukulele", "baritone", "mandolin", "mandola"]
+instruments = ["guitar", "guitalele", "ukulele", "baritone", "mandolin", "cajun", "mandola"]
 
 # Template for the usage for the program.
 usage = <<END_USAGE
@@ -74,7 +74,7 @@ Instruments:
     end
     .join("")}
 
-`baritone` here means baritone ukuleles.
+`baritone` means baritone ukuleles. `cajun` is mandolins with cajun tuning.
 
 Chord Examples:
 
@@ -158,7 +158,7 @@ end
 if ("guitar" == instrument) or ("guitalele" == instrument)
   tuning = "#guitar-tuning"
   predefined_fretboards = "\\include \"predefined-guitar-fretboards.ly\""
-elsif ("mandolin" == instrument) or ("mandola" == instrument)
+elsif ("mandolin" == instrument) or ("cajun" == instrument) or ("mandola" == instrument)
   tuning = "#mandolin-tuning"
   predefined_fretboards = "\\include \"predefined-mandolin-fretboards.ly\""
 elsif ("ukulele" == instrument) or ("baritone" == instrument)
@@ -175,6 +175,8 @@ elsif "ukulele" == instrument
   transposition = ""
 elsif "mandolin" == instrument
   transposition = ""
+elsif "cajun" == instrument
+  transposition = "\\transpose f g"
 elsif "mandola" == instrument
   transposition = "\\transpose c' g"
 elsif "guitalele" == instrument

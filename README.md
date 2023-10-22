@@ -24,6 +24,7 @@ You will get *guitalele-C-Am-F-G7.png* on your working directory.
 * `baritone`, i.e. baritone ukulele
 * `guitalele`
 * `mandolin`
+* `cajun`, i.e. mandolin with cajun tuning
 * `mandola`
 
 Banjos and bass guitars are not supported because their fretboard diagrams are not bundled with LilyPond.
