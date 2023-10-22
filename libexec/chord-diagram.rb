@@ -176,9 +176,9 @@ elsif "ukulele" == instrument
 elsif "mandolin" == instrument
   transposition = ""
 elsif "cajun" == instrument
-  transposition = "\\transpose f g"
+  transposition = "\\transpose f g "
 elsif "mandola" == instrument
-  transposition = "\\transpose c' g"
+  transposition = "\\transpose c' g "
 elsif "guitalele" == instrument
   transposition = "\\transpose c' g' "
 elsif "baritone" == instrument
