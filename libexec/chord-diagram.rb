@@ -7,7 +7,7 @@ require 'tempfile'
 
 # Metadata of the program
 PROGRAM_NAME = "chord-diagram"
-PROGRAM_VERSION = "0.1.0"
+PROGRAM_VERSION = "0.1.1"
 
 
 # Add .exe for executable on Windows
@@ -60,7 +60,7 @@ if not command?("lilypond") then
 end
 
 # Set the valid instruments in the program.
-instruments = ["guitar", "guitalele", "ukulele", "baritone", "mandolin"]
+instruments = ["guitar", "guitalele", "ukulele", "baritone", "mandolin", "mandola"]
 
 # Template for the usage for the program.
 usage = <<END_USAGE
@@ -158,7 +158,7 @@ end
 if ("guitar" == instrument) or ("guitalele" == instrument)
   tuning = "#guitar-tuning"
   predefined_fretboards = "\\include \"predefined-guitar-fretboards.ly\""
-elsif "mandolin" == instrument
+elsif ("mandolin" == instrument) or ("mandola" == instrument)
   tuning = "#mandolin-tuning"
   predefined_fretboards = "\\include \"predefined-mandolin-fretboards.ly\""
 elsif ("ukulele" == instrument) or ("baritone" == instrument)
@@ -175,6 +175,8 @@ elsif "ukulele" == instrument
   transposition = ""
 elsif "mandolin" == instrument
   transposition = ""
+elsif "mandola" == instrument
+  transposition = "\\transpose c' g"
 elsif "guitalele" == instrument
   transposition = "\\transpose c' g' "
 elsif "baritone" == instrument
@@ -207,7 +209,7 @@ chord = \\chordmode {
   \\new FretBoards {
     \\set Staff.stringTunings = #{tuning}
     #{transposition}\\chord
-  } 
+  }
   >>
 
   \\layout {}
