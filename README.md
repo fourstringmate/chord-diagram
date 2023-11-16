@@ -41,7 +41,9 @@ The fretboard diagrams of banjoleles are same as those of ukuleles.
 
 ## Warning
 
-The fretboard diagrams are based on the predefined fretboard diagrams provided by LilyPond. They are never the solely correct fretboard diagram given a chord.
+The fretboard diagrams are based on the predefined fretboard diagrams provided by LilyPond. They are never the sole fretboard diagram given a chord.
+
+Some of the fretboard diagrams provided by LilyPond are extremely difficult or impossible to fret by most people. We cannot check every diagram. If in doubt, search online resources or consult your music teacher.
 
 ## Contribute
 
